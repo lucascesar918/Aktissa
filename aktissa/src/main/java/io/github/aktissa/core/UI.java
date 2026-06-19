@@ -25,8 +25,8 @@ public class UI {
         return new WindowBuilder(title);
     }
 
-    public static TextFieldBuilder textField(String label) {
-        return new TextFieldBuilder(label);
+    public static TextFieldBuilder textField(String label, int cols) {
+        return new TextFieldBuilder(label, cols);
     }
 
     public static CheckBoxBuilder checkBox(String text) {

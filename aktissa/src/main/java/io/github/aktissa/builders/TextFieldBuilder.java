@@ -1,25 +1,25 @@
 package io.github.aktissa.builders;
 
-import io.github.aktissa.theme.Theme;
-import io.github.aktissa.theme.ThemeManager;
+import java.awt.BorderLayout;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import io.github.aktissa.theme.ThemeManager;
 
 public class TextFieldBuilder {
     private final JPanel container;
     private final JTextField field;
     private final JLabel label;
 
-    public TextFieldBuilder(String labelText) {
+    public TextFieldBuilder(String labelText, int cols) {
         this.container = new JPanel(new BorderLayout(0, 5));
         this.container.setOpaque(false); 
 
-        this.field = new JTextField();
+        this.field = new JTextField(cols);
         this.field.setBackground(ThemeManager.current().backgroundInput());
         this.field.setForeground(ThemeManager.current().textPrimary());
         this.field.setCaretColor(ThemeManager.current().accent());
