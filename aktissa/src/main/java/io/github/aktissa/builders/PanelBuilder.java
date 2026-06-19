@@ -38,8 +38,24 @@ public class PanelBuilder {
     }
 
     public PanelBuilder flow() {
+        return this.flowLeft();
+    }
+
+    public PanelBuilder flowLeft() {
         this.currentAxis = -1;
         this.component.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 15));
+        return this;
+    }
+
+    public PanelBuilder flowCenter() {
+        this.currentAxis = -1;
+        this.component.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));
+        return this;
+    }
+
+    public PanelBuilder flowRight() {
+        this.currentAxis = -1;
+        this.component.setLayout(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         return this;
     }
 
