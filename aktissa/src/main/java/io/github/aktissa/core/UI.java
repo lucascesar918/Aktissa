@@ -33,9 +33,8 @@ public class UI {
         return new CheckBoxBuilder(text);
     }
 
-    @SafeVarargs
-    public static <T> ComboBoxBuilder<T> comboBox(T... items) {
-        return new ComboBoxBuilder<>(items);
+    public static ComboBoxBuilder comboBox(String label, String... items) {
+        return new ComboBoxBuilder(label, items);
     }
 
     public static TableBuilder table() {

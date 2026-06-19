@@ -1,48 +1,40 @@
 package io.github.aktissa.builders;
 
-import java.awt.Color;
-import java.awt.Component;
+import java.awt.BorderLayout;
 import java.util.function.Consumer;
 
-import javax.swing.DefaultListCellRenderer;
+import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JList;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
-public class ComboBoxBuilder<T> {
-    private final JComboBox<T> component;
+public class ComboBoxBuilder {
+    private final JPanel container;
+    private final JComboBox<String> component;
+    private final JLabel label;
 
-    @SafeVarargs
-    public ComboBoxBuilder(T... items) {
+    public ComboBoxBuilder(String labelText, String... items) {
+        this.container = new JPanel(new BorderLayout(0, 5));
+        this.container.setOpaque(false);
+
         this.component = new JComboBox<>(items);
         this.component.setBackground(ThemeManager.current().backgroundInput());
         this.component.setForeground(ThemeManager.current().textPrimary());
-        this.component.setBorder(ThemeManager.current().defaultLineBorder());
         this.component.setFocusable(false);
 
-        this.component.setRenderer(new DefaultListCellRenderer() {
-            @Override
-            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-                Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if (isSelected) {
-                    c.setBackground(ThemeManager.current().accent());
-                    c.setForeground(ThemeManager.current().textPrimary());
-                } else {
-                    c.setBackground(ThemeManager.current().backgroundInput());
-                    c.setForeground(ThemeManager.current().textPrimary());
-                }
-                return c;
-            }
-        });
+        this.label = new JLabel(labelText);
+        this.label.setForeground(ThemeManager.current().textSecondary());
+
+        this.container.add(this.label, BorderLayout.NORTH);
+        this.container.add(this.component, BorderLayout.CENTER);
     }
 
-    public ComboBoxBuilder<T> onSelect(Consumer<T> action) {
+    public ComboBoxBuilder onSelect(Consumer<String> action) {
         this.component.addActionListener(e -> {
-            @SuppressWarnings("unchecked")
-            T selected = (T) this.component.getSelectedItem();
+            String selected = (String) this.component.getSelectedItem();
             if (selected != null) {
                 action.accept(selected);
             }
@@ -50,11 +42,18 @@ public class ComboBoxBuilder<T> {
         return this;
     }
 
-    public JComboBox<T> getRawCombo() {
+    public ComboBoxBuilder horizontal() {
+        this.container.remove(this.label);
+        this.container.add(this.label, BorderLayout.WEST);
+        this.container.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+        return this;
+    }
+
+    public JComboBox<String> getRawComboBox() {
         return this.component;
     }
 
     public JComponent build() {
-        return this.component;
+        return this.container;
     }
 }
