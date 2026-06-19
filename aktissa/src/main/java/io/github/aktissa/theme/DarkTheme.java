@@ -13,7 +13,7 @@ public class DarkTheme implements Theme {
     public Color textPrimary() { return Color.WHITE; }
     public Color textSecondary() { return new Color(200, 200, 200); }
     public Color textMuted() { return new Color(130, 130, 130); }
-    public Color accent() { return Color.CYAN; }
+    public Color accent() { return Color.BLUE; }
     public Color border() { return new Color(60, 60, 60); }
     
     public Border defaultLineBorder() {
