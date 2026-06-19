@@ -53,6 +53,10 @@ public class UI {
         return new ScrollPaneBuilder(builder.build());
     }
 
+    public static DialogBuilder dialog(WindowBuilder parent, String title) {
+        return new DialogBuilder(parent, title);
+    }
+
     public static void alert(WindowBuilder parent, String title, String message) {
         new DialogBuilder(parent, title)
             .text(message)
