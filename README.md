@@ -53,6 +53,11 @@ public class Main {
 }
 ```
 
+Em poucas linhas a seguinte tela é gerada:
+
+<img width="500" height="703" alt="demo-view" src="https://github.com/user-attachments/assets/4fe39d32-9ab8-4c42-af83-4c4e06c223b1" />
+
+
 ## Recursos Principais
 
 - **Construção declarativa:** monte componentes e layouts de forma semântica
