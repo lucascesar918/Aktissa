@@ -7,19 +7,20 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class ScrollPaneBuilder {
     private final JScrollPane scrollPane;
 
     public ScrollPaneBuilder(Component view) {
         this.scrollPane = new JScrollPane(view);
-        this.scrollPane.getViewport().setBackground(Theme.BACKGROUND_BASE);
+        this.scrollPane.getViewport().setBackground(ThemeManager.current().backgroundBase());
         this.scrollPane.setBorder(BorderFactory.createEmptyBorder());
-        this.scrollPane.setBackground(Theme.BACKGROUND_BASE);
+        this.scrollPane.setBackground(ThemeManager.current().backgroundBase());
     }
 
     public ScrollPaneBuilder withBorder() {
-        this.scrollPane.setBorder(Theme.defaultLineBorder());
+        this.scrollPane.setBorder(ThemeManager.current().defaultLineBorder());
         return this;
     }
 

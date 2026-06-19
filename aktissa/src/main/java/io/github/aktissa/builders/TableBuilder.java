@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class TableBuilder {
     private final JTable table;
@@ -17,20 +18,20 @@ public class TableBuilder {
         this.model = new DefaultTableModel();
         this.table = new JTable(this.model);
 
-        this.table.setBackground(Theme.BACKGROUND_COMPONENT);
-        this.table.setForeground(Theme.TEXT_PRIMARY);
-        this.table.setGridColor(Theme.BORDER_COLOR);
-        this.table.setSelectionBackground(Theme.ACCENT_CYAN);
-        this.table.setSelectionForeground(Color.BLACK);
+        this.table.setBackground(ThemeManager.current().backgroundComponent());
+        this.table.setForeground(ThemeManager.current().textPrimary());
+        this.table.setGridColor(ThemeManager.current().border());
+        this.table.setSelectionBackground(ThemeManager.current().accent());
+        this.table.setSelectionForeground(ThemeManager.current().textSecondary());
         
         this.table.setFillsViewportHeight(true);
         this.table.setRowHeight(25);
         this.table.setShowVerticalLines(false);
 
         JTableHeader header = this.table.getTableHeader();
-        header.setBackground(Theme.BACKGROUND_BASE);
-        header.setForeground(Theme.TEXT_SECONDARY);
-        header.setBorder(Theme.defaultLineBorder());
+        header.setBackground(ThemeManager.current().backgroundBase());
+        header.setForeground(ThemeManager.current().textSecondary());
+        header.setBorder(ThemeManager.current().defaultLineBorder());
     }
 
     public TableBuilder columns(String... columnNames) {

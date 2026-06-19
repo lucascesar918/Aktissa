@@ -12,13 +12,14 @@ import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class PanelBuilder {
     private final JPanel component;
 
     public PanelBuilder() {
         this.component = new JPanel();
-        this.component.setBackground(Theme.BACKGROUND_BASE);
+        this.component.setBackground(ThemeManager.current().backgroundBase());
     }
 
     public PanelBuilder vertical() {
@@ -47,8 +48,8 @@ public class PanelBuilder {
     }
 
     public PanelBuilder title(String text) {
-        TitledBorder titledBorder = BorderFactory.createTitledBorder(Theme.defaultLineBorder(), text);
-        titledBorder.setTitleColor(Theme.TEXT_SECONDARY);
+        TitledBorder titledBorder = BorderFactory.createTitledBorder(ThemeManager.current().defaultLineBorder(), text);
+        titledBorder.setTitleColor(ThemeManager.current().textSecondary());
         
         Border padding = BorderFactory.createEmptyBorder(5, 5, 5, 5);
         this.component.setBorder(BorderFactory.createCompoundBorder(titledBorder, padding));

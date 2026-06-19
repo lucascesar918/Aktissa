@@ -1,6 +1,8 @@
 package io.github.aktissa.builders;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -18,16 +20,16 @@ public class TextFieldBuilder {
         this.container.setOpaque(false); 
 
         this.field = new JTextField();
-        this.field.setBackground(Theme.BACKGROUND_INPUT);
-        this.field.setForeground(Theme.TEXT_PRIMARY);
-        this.field.setCaretColor(Theme.ACCENT_CYAN);
+        this.field.setBackground(ThemeManager.current().backgroundInput());
+        this.field.setForeground(ThemeManager.current().textPrimary());
+        this.field.setCaretColor(ThemeManager.current().accent());
         this.field.setBorder(BorderFactory.createCompoundBorder(
-            Theme.defaultLineBorder(),
+            ThemeManager.current().defaultLineBorder(),
             BorderFactory.createEmptyBorder(8, 8, 8, 8)
         ));
 
         this.label = new JLabel(labelText);
-        this.label.setForeground(Theme.TEXT_SECONDARY);
+        this.label.setForeground(ThemeManager.current().textSecondary());
 
         this.container.add(this.label, BorderLayout.NORTH);
         this.container.add(this.field, BorderLayout.CENTER);
@@ -35,8 +37,8 @@ public class TextFieldBuilder {
 
     public TextFieldBuilder readOnly() {
         this.field.setEditable(false);
-        this.field.setBackground(Theme.BACKGROUND_READONLY);
-        this.field.setForeground(Theme.TEXT_MUTED);
+        this.field.setBackground(ThemeManager.current().backgroundReadOnly());
+        this.field.setForeground(ThemeManager.current().textMuted());
         return this;
     }
 

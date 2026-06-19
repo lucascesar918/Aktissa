@@ -1,5 +1,7 @@
 package io.github.aktissa.builders;
 
+import io.github.aktissa.theme.ThemeManager;
+
 import java.awt.Color;
 
 import javax.swing.JButton;
@@ -9,8 +11,8 @@ public class ButtonBuilder {
 
     public ButtonBuilder(String text) {
         this.component = new JButton(text);
-        this.component.setBackground(new Color(30, 30, 30));
-        this.component.setForeground(Color.WHITE);
+        this.component.setBackground(ThemeManager.current().backgroundComponent());
+        this.component.setForeground(ThemeManager.current().textPrimary());
         this.component.setFocusPainted(false);
     }
     

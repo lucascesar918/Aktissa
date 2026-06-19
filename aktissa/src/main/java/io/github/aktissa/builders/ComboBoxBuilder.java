@@ -10,6 +10,7 @@ import javax.swing.JComponent;
 import javax.swing.JList;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class ComboBoxBuilder<T> {
     private final JComboBox<T> component;
@@ -17,9 +18,9 @@ public class ComboBoxBuilder<T> {
     @SafeVarargs
     public ComboBoxBuilder(T... items) {
         this.component = new JComboBox<>(items);
-        this.component.setBackground(Theme.BACKGROUND_INPUT);
-        this.component.setForeground(Theme.TEXT_PRIMARY);
-        this.component.setBorder(Theme.defaultLineBorder());
+        this.component.setBackground(ThemeManager.current().backgroundInput());
+        this.component.setForeground(ThemeManager.current().textPrimary());
+        this.component.setBorder(ThemeManager.current().defaultLineBorder());
         this.component.setFocusable(false);
 
         this.component.setRenderer(new DefaultListCellRenderer() {
@@ -27,11 +28,11 @@ public class ComboBoxBuilder<T> {
             public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                 if (isSelected) {
-                    c.setBackground(Theme.ACCENT_CYAN);
-                    c.setForeground(Color.BLACK);
+                    c.setBackground(ThemeManager.current().accent());
+                    c.setForeground(ThemeManager.current().textPrimary());
                 } else {
-                    c.setBackground(Theme.BACKGROUND_INPUT);
-                    c.setForeground(Theme.TEXT_PRIMARY);
+                    c.setBackground(ThemeManager.current().backgroundInput());
+                    c.setForeground(ThemeManager.current().textPrimary());
                 }
                 return c;
             }

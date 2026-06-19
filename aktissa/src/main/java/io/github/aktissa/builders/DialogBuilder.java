@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class DialogBuilder {
     private final JDialog dialog;
@@ -19,15 +20,15 @@ public class DialogBuilder {
     public DialogBuilder(WindowBuilder parent, String title) {
         this.dialog = new JDialog(parent.getRawFrame(), title, true);
         this.dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        this.dialog.getContentPane().setBackground(Theme.BACKGROUND_BASE);
+        this.dialog.getContentPane().setBackground(ThemeManager.current().backgroundBase());
         this.dialog.setLayout(new BorderLayout());
 
         this.contentPanel = new JPanel(new BorderLayout());
-        this.contentPanel.setBackground(Theme.BACKGROUND_BASE);
+        this.contentPanel.setBackground(ThemeManager.current().backgroundBase());
         this.contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
         this.buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        this.buttonPanel.setBackground(Theme.BACKGROUND_COMPONENT);
+        this.buttonPanel.setBackground(ThemeManager.current().backgroundComponent());
         this.buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         this.dialog.add(this.contentPanel, BorderLayout.CENTER);
@@ -36,7 +37,7 @@ public class DialogBuilder {
 
     public DialogBuilder text(String message) {
         JLabel label = new JLabel(message);
-        label.setForeground(Theme.TEXT_PRIMARY);
+        label.setForeground(ThemeManager.current().textPrimary());
         label.setHorizontalAlignment(SwingConstants.CENTER);
         this.contentPanel.add(label, BorderLayout.CENTER);
         return this;

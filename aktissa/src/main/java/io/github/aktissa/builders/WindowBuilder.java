@@ -5,6 +5,7 @@ import java.awt.Component;
 import javax.swing.JFrame;
 
 import io.github.aktissa.theme.Theme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class WindowBuilder {
     private final JFrame frame;
@@ -12,7 +13,7 @@ public class WindowBuilder {
     public WindowBuilder(String title) {
         this.frame = new JFrame(title);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.frame.getContentPane().setBackground(Theme.BACKGROUND_BASE);
+        this.frame.getContentPane().setBackground(ThemeManager.current().backgroundBase());
     }
 
     public WindowBuilder size(int width, int height) {
