@@ -1,9 +1,10 @@
 package io.github.aktissa.demo;
 
-import io.github.aktissa.core.UI;
-import io.github.aktissa.theme.ThemeManager;
-import io.github.aktissa.theme.*;
 import javax.swing.SwingUtilities;
+
+import io.github.aktissa.core.UI;
+import io.github.aktissa.theme.DarkTheme;
+import io.github.aktissa.theme.ThemeManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,12 +12,11 @@ public class Main {
             ThemeManager.set(new DarkTheme());
 
             UI.window("Sistema de Gestão")
-                    .size(500, 500)
                     .content(
                             UI.panel().title("Cadastro de Funcionário").vertical()
-                                    .add(UI.textField("Nome Completo").text("João da Silva"))
-                                    .add(UI.textField("E-mail Corporativo").text("joao@empresa.com"))
-                                    .add(UI.comboBox("Desenvolvedor", "Designer", "Gerente").build())
+                                    .add(UI.textField("Nome Completo", 30).text("João da Silva"))
+                                    .add(UI.textField("E-mail Corporativo", 30).text("joao@empresa.com"))
+                                        .add(UI.comboBox("Nível de Acesso", "Desenvolvedor", "Designer", "Gerente").build())
 
                                     .add(UI.panel().title("Permissões de Acesso").vertical()
                                             .add(UI.scroll(
@@ -27,7 +27,7 @@ public class Main {
                                             ).withBorder().build())
                                     )
 
-                                    .add(UI.panel().flow()
+                                    .add(UI.panel().flowCenter()
                                             .add(UI.button("Salvar Registro"))
                                             .add(UI.button("Cancelar Operação")))
                     )
