@@ -22,7 +22,7 @@ public class TextFieldBuilder {
         this.field = new JTextField(cols);
         this.field.setBackground(ThemeManager.current().backgroundInput());
         this.field.setForeground(ThemeManager.current().textPrimary());
-        this.field.setCaretColor(ThemeManager.current().accent());
+        this.field.setCaretColor(ThemeManager.current().textSecondary());
         this.field.setBorder(BorderFactory.createCompoundBorder(
             ThemeManager.current().defaultLineBorder(),
             BorderFactory.createEmptyBorder(8, 8, 8, 8)
