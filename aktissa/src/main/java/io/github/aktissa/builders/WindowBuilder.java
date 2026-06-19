@@ -1,14 +1,15 @@
 package io.github.aktissa.builders;
 
 import java.awt.Component;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
 public class WindowBuilder {
     private final JFrame frame;
+    private Dimension customSize;
 
     public WindowBuilder(String title) {
         this.frame = new JFrame(title);
@@ -17,8 +18,7 @@ public class WindowBuilder {
     }
 
     public WindowBuilder size(int width, int height) {
-        this.frame.setSize(width, height);
-        this.frame.setLocationRelativeTo(null);
+        this.customSize = new Dimension(width, height);
         return this;
     }
 
@@ -33,7 +33,13 @@ public class WindowBuilder {
     }
 
     public void show() {
-        this.frame.pack();
+        if (this.customSize != null) {
+            this.frame.setSize(this.customSize);
+            this.frame.setLocationRelativeTo(null);
+        } else {
+            this.frame.pack();
+            this.frame.setLocationRelativeTo(null);
+        }
         this.frame.setVisible(true);
     }
 
