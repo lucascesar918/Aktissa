@@ -25,3 +25,6 @@ replay_pid*
 
 # build files
 target/
+
+# VSCode files
+.vscode/
