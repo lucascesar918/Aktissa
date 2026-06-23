@@ -4,6 +4,7 @@ import io.github.aktissa.builders.ButtonBuilder;
 import io.github.aktissa.builders.CheckBoxBuilder;
 import io.github.aktissa.builders.ComboBoxBuilder;
 import io.github.aktissa.builders.DialogBuilder;
+import io.github.aktissa.builders.TextAreaBuilder;
 import io.github.aktissa.builders.LabelBuilder;
 import io.github.aktissa.builders.PanelBuilder;
 import io.github.aktissa.builders.RadioButtonBuilder;
