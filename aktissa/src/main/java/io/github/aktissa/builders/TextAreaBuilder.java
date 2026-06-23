@@ -1,46 +1,45 @@
 package io.github.aktissa.builders;
 
-import javax.swing.JLabel;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class TextAreaBuilder {
-    private final javax.swing.JPanel container;
-    private final javax.swing.JTextArea field;
-    private final JLabel label;
+import io.github.aktissa.theme.ThemeManager;
 
-    public TextAreaBuilder(String labelText, int rows, int cols) {
-        this.field = new JTextArea(rows, cols);
-        this.label = new JLabel(labelText);
-        this.container = new javax.swing.JPanel();
-        this.container.setLayout(new javax.swing.BoxLayout(this.container, javax.swing.BoxLayout.Y_AXIS));
-        this.container.add(this.label);
-        this.container.add(this.field);
+public class TextAreaBuilder {
+    private final JTextArea area;
+    private final JScrollPane scroll;
+
+    public TextAreaBuilder(int rows, int cols) {
+        this.area = new JTextArea(rows, cols);
+        this.area.setBackground(ThemeManager.current().backgroundInput());
+        this.area.setForeground(ThemeManager.current().textPrimary());
+        this.area.setCaretColor(ThemeManager.current().accent());
+        this.area.setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
+        this.area.setLineWrap(true);
+        this.area.setWrapStyleWord(true);
+
+        this.scroll = new JScrollPane(this.area);
+        this.scroll.setBorder(ThemeManager.current().defaultLineBorder());
+        this.scroll.getViewport().setBackground(ThemeManager.current().backgroundInput());
     }
 
-    public javax.swing.JPanel build() {
-        return this.container;
+    public JTextArea getRawArea() {
+        return this.area;
+    }
+
+    public JComponent build() {
+        return this.scroll;
     }
 
     public TextAreaBuilder readOnly() {
-        this.field.setEditable(false);
+        this.area.setEditable(false);
         return this;
     }
 
-    public TextAreaBuilder text(String value) {
-        this.field.setText(value);
+    public TextAreaBuilder readWrite() {
+        this.area.setEditable(true);
         return this;
     }
-
-    public JTextArea getRawField() {
-        return this.field;
-    }
-
-    public TextAreaBuilder horizontal() {
-        this.container.remove(this.label);
-        this.container.setLayout(new javax.swing.BoxLayout(this.container, javax.swing.BoxLayout.X_AXIS));
-        this.container.add(this.label);
-        this.container.add(this.field);
-        return this;
-    }
-
 }
