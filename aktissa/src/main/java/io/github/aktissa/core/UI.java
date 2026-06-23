@@ -4,7 +4,10 @@ import io.github.aktissa.builders.ButtonBuilder;
 import io.github.aktissa.builders.CheckBoxBuilder;
 import io.github.aktissa.builders.ComboBoxBuilder;
 import io.github.aktissa.builders.DialogBuilder;
+import io.github.aktissa.builders.LabelBuilder;
 import io.github.aktissa.builders.PanelBuilder;
+import io.github.aktissa.builders.RadioButtonBuilder;
+import io.github.aktissa.builders.RadioGroupBuilder;
 import io.github.aktissa.builders.ScrollPaneBuilder;
 import io.github.aktissa.builders.TableBuilder;
 import io.github.aktissa.builders.TextFieldBuilder;
@@ -26,6 +29,10 @@ public class UI {
     }
 
     public static TextFieldBuilder textField(String label, int cols) {
+        return new TextFieldBuilder(label, cols);
+    }
+
+    public static TextFieldBuilder textFieldReadOnly(String label, int cols) {
         return new TextFieldBuilder(label, cols);
     }
 
@@ -70,5 +77,17 @@ public class UI {
             .addCloseAction(cancelText)
             .addAction(confirmText, onConfirm)
             .show();
+    }
+
+    public static RadioGroupBuilder radioGroup() {
+        return new RadioGroupBuilder();
+    }
+
+    public static RadioButtonBuilder radioButton(String text) {
+        return new RadioButtonBuilder(text);
+    }
+
+    public static LabelBuilder label(String text) {
+        return new LabelBuilder(text);
     }
 }
