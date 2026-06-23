@@ -14,13 +14,6 @@ Já é inclusa a funcionalidade de temas, sendo possível evitar o uso de cores 
 Aqui está o exemplo da criação de uma janela completa, com componentes interativos e layouts, construída com uma única instrução.
 
 ```java
-package io.github.aktissa.demo;
-
-import io.github.aktissa.core.UI;
-import io.github.aktissa.theme.ThemeManager;
-import io.github.aktissa.theme.DarkTheme;
-import javax.swing.SwingUtilities;
-
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -67,4 +60,4 @@ Em poucas linhas a seguinte tela é gerada:
 ## Próximos Objetivos
 - [ ] Criar documentação do projeto
 - [ ] Tornar possível a troca de temas durante a execução do programa
-- [ ] Publicar no Maven Central (quando o projeto se tornar maduro o suficiente)
+- [ ] Publicar em algum repositório (quando o projeto se tornar maduro o suficiente ou quando eu tiver paciência pra isso)
