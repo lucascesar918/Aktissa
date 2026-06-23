@@ -5,7 +5,7 @@
 Wrapper para simplificar a implementação de componentes do Java Swing, agilizando o desenvolvimento de interfaces gráficas. O foco do projeto é mitigar falhas do design ultrapassado do Swing, usando padrões de design como Builder e Factory para diminuir a verbosidade e tornar o código mais fluido e previsível. Enquanto você desenha a tela de forma despreocupada, o wrapper foca nos pormenores do toolkit de widgets.
 
 ### Criação de Temas
-Já é inclusa a funcionalidade de temas, sendo possível evitar o uso de cores datadas por padrão. Alguns temas de acessibilidade são incluídos por padrão, dentre eles:
+Já é inclusa a funcionalidade de temas claro e escuro, sendo possível evitar o uso de cores datadas por padrão. Alguns temas de acessibilidade são incluídos por padrão, dentre eles:
 - Temas de alto contraste (claro e escuro) para pessoas com baixa visão
 - Tema para daltonismo
 
