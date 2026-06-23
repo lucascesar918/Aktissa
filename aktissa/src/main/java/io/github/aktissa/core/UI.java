@@ -9,6 +9,9 @@ import io.github.aktissa.builders.ScrollPaneBuilder;
 import io.github.aktissa.builders.TableBuilder;
 import io.github.aktissa.builders.TextFieldBuilder;
 import io.github.aktissa.builders.WindowBuilder;
+import io.github.aktissa.builders.PasswordFieldBuilder;
+import io.github.aktissa.builders.LabelBuilder;
+import io.github.aktissa.builders.TextAreaBuilder;
 
 public class UI {
     private UI() {}
@@ -70,5 +73,17 @@ public class UI {
             .addCloseAction(cancelText)
             .addAction(confirmText, onConfirm)
             .show();
+    }
+
+    public static PasswordFieldBuilder passwordField(String label, int cols) {
+        return new PasswordFieldBuilder(label, cols);
+    }
+
+    public static LabelBuilder label(String text) {
+        return new LabelBuilder(text);
+    }
+
+    public static TextAreaBuilder textArea(String label, int rows, int cols) {
+        return new TextAreaBuilder(label, rows, cols);
     }
 }
