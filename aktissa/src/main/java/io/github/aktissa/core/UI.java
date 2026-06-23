@@ -90,4 +90,8 @@ public class UI {
     public static LabelBuilder label(String text) {
         return new LabelBuilder(text);
     }
+
+    public static TextAreaBuilder textArea(int rows, int cols) {
+        return new TextAreaBuilder(rows, cols);
+    }
 }
