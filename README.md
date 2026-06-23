@@ -5,7 +5,7 @@
 Wrapper para simplificar a implementação de componentes do Java Swing, agilizando o desenvolvimento de interfaces gráficas. O foco do projeto é mitigar falhas do design ultrapassado do Swing, usando padrões de design como Builder e Factory para diminuir a verbosidade e tornar o código mais fluido e previsível. Enquanto você desenha a tela de forma despreocupada, o wrapper foca nos pormenores do toolkit de widgets.
 
 ### Criação de Temas
-Já é inclusa a funcionalidade de temas, sendo possível evitar o uso de cores datadas por padrão. Alguns temas de acessibilidade são incluídos por padrão, dentre eles:
+Já é inclusa a funcionalidade de temas claro e escuro, sendo possível evitar o uso de cores datadas por padrão. Alguns temas de acessibilidade são incluídos por padrão, dentre eles:
 - Temas de alto contraste (claro e escuro) para pessoas com baixa visão
 - Tema para daltonismo
 
@@ -14,13 +14,6 @@ Já é inclusa a funcionalidade de temas, sendo possível evitar o uso de cores 
 Aqui está o exemplo da criação de uma janela completa, com componentes interativos e layouts, construída com uma única instrução.
 
 ```java
-package io.github.aktissa.demo;
-
-import io.github.aktissa.core.UI;
-import io.github.aktissa.theme.ThemeManager;
-import io.github.aktissa.theme.DarkTheme;
-import javax.swing.SwingUtilities;
-
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -67,4 +60,4 @@ Em poucas linhas a seguinte tela é gerada:
 ## Próximos Objetivos
 - [ ] Criar documentação do projeto
 - [ ] Tornar possível a troca de temas durante a execução do programa
-- [ ] Publicar no Maven Central (quando o projeto se tornar maduro o suficiente)
+- [ ] Publicar em algum repositório (quando o projeto se tornar maduro o suficiente ou quando eu tiver paciência pra isso)

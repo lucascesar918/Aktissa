@@ -42,6 +42,13 @@ public class TextFieldBuilder {
         return this;
     }
 
+    public TextFieldBuilder readWrite() {
+        this.field.setEditable(false);
+        this.field.setBackground(ThemeManager.current().backgroundInput());
+        this.field.setForeground(ThemeManager.current().textPrimary());
+        return this;
+    }
+
     public TextFieldBuilder text(String value) {
         this.field.setText(value);
         return this;
