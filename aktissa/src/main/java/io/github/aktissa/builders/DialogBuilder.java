@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
 public class DialogBuilder {
@@ -40,6 +39,12 @@ public class DialogBuilder {
         label.setForeground(ThemeManager.current().textPrimary());
         label.setHorizontalAlignment(SwingConstants.CENTER);
         this.contentPanel.add(label, BorderLayout.CENTER);
+        return this;
+    }
+
+    public DialogBuilder content(ComponentBuilder builder) {
+        this.contentPanel.removeAll();
+        this.contentPanel.add(builder.build(), BorderLayout.CENTER);
         return this;
     }
 

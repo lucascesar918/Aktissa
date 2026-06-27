@@ -1,14 +1,11 @@
 package io.github.aktissa.builders;
 
 import java.awt.Cursor;
-
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
-
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
-public class CheckBoxBuilder {
+public class CheckBoxBuilder implements ComponentBuilder {
     private final JCheckBox component;
 
     public CheckBoxBuilder(String text) {
@@ -33,6 +30,7 @@ public class CheckBoxBuilder {
         return this.component;
     }
 
+    @Override
     public JComponent build() {
         return this.component;
     }

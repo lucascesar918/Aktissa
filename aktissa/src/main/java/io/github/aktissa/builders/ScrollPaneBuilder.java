@@ -1,15 +1,12 @@
 package io.github.aktissa.builders;
 
 import java.awt.Component;
-
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
-public class ScrollPaneBuilder {
+public class ScrollPaneBuilder implements ComponentBuilder {
     private final JScrollPane scrollPane;
 
     public ScrollPaneBuilder(Component view) {
@@ -28,6 +25,7 @@ public class ScrollPaneBuilder {
         return this.scrollPane;
     }
 
+    @Override
     public JComponent build() {
         return this.scrollPane;
     }

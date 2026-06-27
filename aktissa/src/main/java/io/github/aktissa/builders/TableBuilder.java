@@ -1,16 +1,13 @@
 package io.github.aktissa.builders;
 
-import java.awt.Color;
-
 import javax.swing.JComponent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
-import io.github.aktissa.theme.Theme;
 import io.github.aktissa.theme.ThemeManager;
 
-public class TableBuilder {
+public class TableBuilder implements ComponentBuilder {
     private final JTable table;
     private final DefaultTableModel model;
 
@@ -46,10 +43,16 @@ public class TableBuilder {
         return this;
     }
 
+    public TableBuilder clear() {
+        this.model.setRowCount(0);
+        return this;
+    }
+
     public JTable getRawTable() {
         return this.table;
     }
 
+    @Override
     public JComponent build() {
         return this.table;
     }

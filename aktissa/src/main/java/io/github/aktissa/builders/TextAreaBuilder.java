@@ -4,10 +4,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
 import io.github.aktissa.theme.ThemeManager;
 
-public class TextAreaBuilder {
+public class TextAreaBuilder implements ComponentBuilder {
     private final JTextArea area;
     private final JScrollPane scroll;
 
@@ -29,10 +28,6 @@ public class TextAreaBuilder {
         return this.area;
     }
 
-    public JComponent build() {
-        return this.scroll;
-    }
-
     public TextAreaBuilder readOnly() {
         this.area.setEditable(false);
         return this;
@@ -41,5 +36,10 @@ public class TextAreaBuilder {
     public TextAreaBuilder readWrite() {
         this.area.setEditable(true);
         return this;
+    }
+
+    @Override
+    public JComponent build() {
+        return this.scroll;
     }
 }

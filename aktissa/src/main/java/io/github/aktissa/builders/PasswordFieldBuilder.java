@@ -8,7 +8,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 
-public class PasswordFieldBuilder {
+public class PasswordFieldBuilder implements ComponentBuilder {
     private final JPanel container;
     private final JPasswordField field;
     private final JLabel label;
@@ -44,6 +44,7 @@ public class PasswordFieldBuilder {
         return this.field;
     }
 
+    @Override
     public JComponent build() {
         return this.container;
     }

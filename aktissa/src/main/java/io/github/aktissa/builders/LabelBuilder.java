@@ -1,13 +1,11 @@
 package io.github.aktissa.builders;
 
 import java.awt.Font;
-
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
 import io.github.aktissa.theme.ThemeManager;
 
-public class LabelBuilder {
+public class LabelBuilder implements ComponentBuilder {
     private final JLabel component;
 
     public LabelBuilder(String text) {
@@ -66,6 +64,7 @@ public class LabelBuilder {
         return this.component;
     }
 
+    @Override
     public JLabel build() {
         return this.component;
     }

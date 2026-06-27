@@ -4,13 +4,15 @@ import io.github.aktissa.builders.ButtonBuilder;
 import io.github.aktissa.builders.CheckBoxBuilder;
 import io.github.aktissa.builders.ComboBoxBuilder;
 import io.github.aktissa.builders.DialogBuilder;
-import io.github.aktissa.builders.TextAreaBuilder;
 import io.github.aktissa.builders.LabelBuilder;
 import io.github.aktissa.builders.PanelBuilder;
+import io.github.aktissa.builders.ProgressBarBuilder;
 import io.github.aktissa.builders.RadioButtonBuilder;
 import io.github.aktissa.builders.RadioGroupBuilder;
 import io.github.aktissa.builders.ScrollPaneBuilder;
+import io.github.aktissa.builders.SliderBuilder;
 import io.github.aktissa.builders.TableBuilder;
+import io.github.aktissa.builders.TextAreaBuilder;
 import io.github.aktissa.builders.TextFieldBuilder;
 import io.github.aktissa.builders.WindowBuilder;
 
@@ -34,7 +36,7 @@ public class UI {
     }
 
     public static TextFieldBuilder textFieldReadOnly(String label, int cols) {
-        return new TextFieldBuilder(label, cols);
+        return new TextFieldBuilder(label, cols).readOnly();
     }
 
     public static CheckBoxBuilder checkBox(String text) {
@@ -53,11 +55,7 @@ public class UI {
         return new ScrollPaneBuilder(view);
     }
 
-    public static ScrollPaneBuilder scroll(TableBuilder builder) {
-        return new ScrollPaneBuilder(builder.build());
-    }
-
-    public static ScrollPaneBuilder scroll(PanelBuilder builder) {
+    public static ScrollPaneBuilder scroll(io.github.aktissa.builders.ComponentBuilder builder) {
         return new ScrollPaneBuilder(builder.build());
     }
 
@@ -94,5 +92,13 @@ public class UI {
 
     public static TextAreaBuilder textArea(int rows, int cols) {
         return new TextAreaBuilder(rows, cols);
+    }
+
+    public static ProgressBarBuilder progressBar(int min, int max) {
+        return new ProgressBarBuilder(min, max);
+    }
+
+    public static SliderBuilder slider(int min, int max, int value) {
+        return new SliderBuilder(min, max, value);
     }
 }

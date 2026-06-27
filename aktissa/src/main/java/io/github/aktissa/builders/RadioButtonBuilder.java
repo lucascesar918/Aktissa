@@ -3,9 +3,8 @@ package io.github.aktissa.builders;
 import io.github.aktissa.theme.ThemeManager;
 import javax.swing.JRadioButton;
 import java.awt.Cursor;
-import java.awt.event.ActionListener;
 
-public class RadioButtonBuilder {
+public class RadioButtonBuilder implements ComponentBuilder {
     private final JRadioButton component;
 
     public RadioButtonBuilder(String text) {
@@ -36,6 +35,7 @@ public class RadioButtonBuilder {
         return this.component;
     }
 
+    @Override
     public JRadioButton build() {
         return this.component;
     }

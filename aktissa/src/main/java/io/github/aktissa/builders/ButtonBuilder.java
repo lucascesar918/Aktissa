@@ -1,12 +1,9 @@
 package io.github.aktissa.builders;
 
 import io.github.aktissa.theme.ThemeManager;
-
-import java.awt.Color;
-
 import javax.swing.JButton;
 
-public class ButtonBuilder {
+public class ButtonBuilder implements ComponentBuilder {
     private final JButton component;
 
     public ButtonBuilder(String text) {
@@ -21,8 +18,8 @@ public class ButtonBuilder {
         return this;
     }
 
+    @Override
     public JButton build() {
         return this.component;
     }
-
 }

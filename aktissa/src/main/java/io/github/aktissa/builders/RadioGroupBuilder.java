@@ -20,9 +20,9 @@ public class RadioGroupBuilder {
 
     public String getSelectedValue() {
         ButtonModel selection = this.group.getSelection();
-        if (selection != null)
+        if (selection != null) {
             return selection.getActionCommand();
-        
+        }
         return null;
     }
 

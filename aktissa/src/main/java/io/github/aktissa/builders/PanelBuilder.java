@@ -9,13 +9,14 @@ import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 import io.github.aktissa.theme.ThemeManager;
 
-public class PanelBuilder {
+public class PanelBuilder implements ComponentBuilder {
     private final JPanel component;
     private int currentAxis = -1;
 
@@ -102,40 +103,19 @@ public class PanelBuilder {
         return this;
     }
 
-    public PanelBuilder add(ButtonBuilder builder) {
+    public PanelBuilder add(ComponentBuilder builder) {
         injectAutoSpacing();
         this.component.add(builder.build());
         return this;
     }
 
-    public PanelBuilder add(ButtonBuilder builder, Object constraints) {
+    public PanelBuilder add(ComponentBuilder builder, Object constraints) {
         this.component.add(builder.build(), constraints);
         return this;
     }
 
-    public PanelBuilder add(TextFieldBuilder builder) {
-        injectAutoSpacing();
-        this.component.add(builder.build());
-        return this;
-    }
-
-    public PanelBuilder add(TextFieldBuilder builder, Object constraints) {
-        this.component.add(builder.build(), constraints);
-        return this;
-    }
-
-    public PanelBuilder add(PanelBuilder builder) {
-        injectAutoSpacing();
-        this.component.add(builder.build());
-        return this;
-    }
-
-    public PanelBuilder add(PanelBuilder builder, Object constraints) {
-        this.component.add(builder.build(), constraints);
-        return this;
-    }
-
-    public JPanel build() {
+    @Override
+    public JComponent build() {
         return this.component;
     }
 }

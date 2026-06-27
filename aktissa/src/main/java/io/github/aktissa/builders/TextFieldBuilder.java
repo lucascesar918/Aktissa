@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 import io.github.aktissa.theme.ThemeManager;
 
-public class TextFieldBuilder {
+public class TextFieldBuilder implements ComponentBuilder {
     private final JPanel container;
     private final JTextField field;
     private final JLabel label;
@@ -43,7 +43,7 @@ public class TextFieldBuilder {
     }
 
     public TextFieldBuilder readWrite() {
-        this.field.setEditable(false);
+        this.field.setEditable(true);
         this.field.setBackground(ThemeManager.current().backgroundInput());
         this.field.setForeground(ThemeManager.current().textPrimary());
         return this;
@@ -51,6 +51,11 @@ public class TextFieldBuilder {
 
     public TextFieldBuilder text(String value) {
         this.field.setText(value);
+        return this;
+    }
+
+    public TextFieldBuilder onEnter(Runnable action) {
+        this.field.addActionListener(e -> action.run());
         return this;
     }
 
@@ -65,6 +70,7 @@ public class TextFieldBuilder {
         return this.field;
     }
 
+    @Override
     public JComponent build() {
         return this.container;
     }

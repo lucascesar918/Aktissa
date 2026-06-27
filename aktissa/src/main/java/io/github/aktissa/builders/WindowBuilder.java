@@ -22,8 +22,8 @@ public class WindowBuilder {
         return this;
     }
 
-    public WindowBuilder content(PanelBuilder panelBuilder) {
-        this.frame.add(panelBuilder.build());
+    public WindowBuilder content(ComponentBuilder builder) {
+        this.frame.add(builder.build());
         return this;
     }
 

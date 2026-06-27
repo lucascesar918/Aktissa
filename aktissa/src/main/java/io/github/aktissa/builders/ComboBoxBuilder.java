@@ -2,16 +2,14 @@ package io.github.aktissa.builders;
 
 import java.awt.BorderLayout;
 import java.util.function.Consumer;
-
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import io.github.aktissa.theme.ThemeManager;
 
-public class ComboBoxBuilder {
+public class ComboBoxBuilder implements ComponentBuilder {
     private final JPanel container;
     private final JComboBox<String> component;
     private final JLabel label;
@@ -53,6 +51,7 @@ public class ComboBoxBuilder {
         return this.component;
     }
 
+    @Override
     public JComponent build() {
         return this.container;
     }
