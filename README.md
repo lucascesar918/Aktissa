@@ -17,70 +17,70 @@ A [demo completa](aktissa/src/test/java/io/github/aktissa/demo/Main.java) (funci
 
 ```java
 SwingUtilities.invokeLater(() -> {
-            ThemeManager.set(new DarkTheme());
+	ThemeManager.set(new DarkTheme());
 
-            WindowBuilder mainWindow = UI.window("Demo - Gestão de Tarefas");
+	WindowBuilder mainWindow = UI.window("Demo - Gestão de Tarefas");
 
-            // Declaração dos componentes que precisam reter estado para interagir entre si
-            TableBuilder tabelaTarefas = UI.table().columns("Tarefa", "Categoria", "Prioridade", "Esforço");
-            RadioGroupBuilder grupoPrioridade = UI.radioGroup();
-            TextFieldBuilder campoNome = UI.textField("Descrição da Tarefa", 20);
-            ComboBoxBuilder comboCategoria = UI.comboBox("Categoria", "Desenvolvimento", "Infraestrutura", "Design");
-            ProgressBarBuilder barraProgresso = UI.progressBar(0, 10).value(0);
-            
-            LabelBuilder rotuloEsforço = UI.label("Tempo estimado: 5 horas").secondary();
-            SliderBuilder sliderEsforço = UI.slider(1, 40, 5)
-                    .onChange(valor -> rotuloEsforço.text("Tempo estimado: " + valor + " horas").getRawLabel().repaint());
+	// Declaração dos componentes que precisam reter estado para interagir entre si
+	TableBuilder tabelaTarefas = UI.table().columns("Tarefa", "Categoria", "Prioridade", "Esforço");
+	RadioGroupBuilder grupoPrioridade = UI.radioGroup();
+	TextFieldBuilder campoNome = UI.textField("Descrição da Tarefa", 20);
+	ComboBoxBuilder comboCategoria = UI.comboBox("Categoria", "Desenvolvimento", "Infraestrutura", "Design");
+	ProgressBarBuilder barraProgresso = UI.progressBar(0, 10).value(0);
 
-            // Montagem da interface
-            mainWindow.size(850, 550).content(
-                    UI.panel().border()
-                            .add(UI.panel().title("Nova Demanda").vertical()
-                                            .add(campoNome)
-                                            .add(comboCategoria)
-                                            .add(UI.panel().flowLeft()
-                                                    .add(UI.label("Prioridade:").secondary())
-                                                    .add(grupoPrioridade.add("Baixa"))
-                                                    .add(grupoPrioridade.add("Média (Padrão)").accentText())
-                                                    .add(grupoPrioridade.add("Alta"))
-                                            )
-                                            .add(UI.panel().vertical()
-                                                    .add(rotuloEsforço)
-                                                    .add(sliderEsforço)
-                                            )
-                                            .add(UI.panel().flowRight()
-                                                    .add(UI.button("Registrar Tarefa")
-                                                            .onClick(() -> registrarDemanda(
-                                                                    mainWindow, campoNome, comboCategoria, 
-                                                                    grupoPrioridade, sliderEsforço, tabelaTarefas, barraProgresso
-                                                            )))
-                                            )
-                            , BorderLayout.WEST)
+	LabelBuilder rotuloEsforço = UI.label("Tempo estimado: 5 horas").secondary();
+	SliderBuilder sliderEsforço = UI.slider(1, 40, 5)
+		.onChange(valor -> rotuloEsforço.text("Tempo estimado: " + valor + " horas").getRawLabel().repaint());
 
-                            .add(UI.panel().title("Visão Geral do Sprint").vertical()
-                                            .add(UI.scroll(tabelaTarefas).withBorder())
-                                            .add(UI.panel().flowLeft()
-                                                    .add(UI.checkBox("Sincronizar na nuvem").checked(true))
-                                                    .add(UI.checkBox("Gerar log"))
-                                            )
-                                            .add(UI.panel().title("Capacidade da Equipe").vertical()
-                                                    .add(barraProgresso)
-                                                    .add(UI.panel().flowRight()
-                                                            .add(UI.button("Deletar Tarefas").onClick(() -> {
-                                                                UI.confirm(mainWindow, "Atenção", 
-                                                                        "Isso apagará todas as tarefas da memória. Continuar?",
-                                                                        () -> {
-                                                                            tabelaTarefas.clear();
-                                                                            barraProgresso.value(0);
-                                                                        },
-                                                                        "Cancelar", "Sim, Deletar"
-                                                                );
-                                                            }))
-                                                    )
-                                            )
-                            , BorderLayout.CENTER)
-            ).show();
-        });
+	// Montagem da interface
+	mainWindow.size(850, 550).content(
+		UI.panel().border()
+			.add(UI.panel().title("Nova Demanda").vertical()
+				.add(campoNome)
+				.add(comboCategoria)
+				.add(UI.panel().flowLeft()
+					.add(UI.label("Prioridade:").secondary())
+					.add(grupoPrioridade.add("Baixa"))
+					.add(grupoPrioridade.add("Média (Padrão)").accentText())
+					.add(grupoPrioridade.add("Alta"))
+				)
+				.add(UI.panel().vertical()
+					.add(rotuloEsforço)
+					.add(sliderEsforço)
+				)
+				.add(UI.panel().flowRight()
+					.add(UI.button("Registrar Tarefa")
+						.onClick(() -> registrarDemanda(
+							mainWindow, campoNome, comboCategoria,
+							grupoPrioridade, sliderEsforço, tabelaTarefas, barraProgresso
+						)))
+				)
+				, BorderLayout.WEST)
+
+			.add(UI.panel().title("Visão Geral do Sprint").vertical()
+				.add(UI.scroll(tabelaTarefas).withBorder())
+				.add(UI.panel().flowLeft()
+					.add(UI.checkBox("Sincronizar na nuvem").checked(true))
+					.add(UI.checkBox("Gerar log"))
+				)
+				.add(UI.panel().title("Capacidade da Equipe").vertical()
+					.add(barraProgresso)
+					.add(UI.panel().flowRight()
+						.add(UI.button("Deletar Tarefas").onClick(() -> {
+							UI.confirm(mainWindow, "Atenção",
+								"Isso apagará todas as tarefas da memória. Continuar?",
+								() -> {
+									tabelaTarefas.clear();
+									barraProgresso.value(0);
+								},
+								"Cancelar", "Sim, Deletar"
+							);
+						}))
+					)
+				)
+				, BorderLayout.CENTER)
+	).show();
+});
 ```
 
 Em poucas linhas a seguinte tela é gerada:
