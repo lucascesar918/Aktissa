@@ -98,3 +98,8 @@ Em poucas linhas a seguinte tela é gerada:
 - [ ] Criar documentação do projeto
 - [ ] Tornar possível a troca de temas durante a execução do programa
 - [ ] Publicar em algum repositório (quando o projeto se tornar maduro o suficiente ou quando eu tiver paciência pra isso)
+- [ ] Implementar componentes compostos
+- [ ] Implementar máscaras de input
+- [ ] Implementar limitações de inputs
+- [ ] Criar mais métodos pra gerir os componentes de input (setText, clear, etc.)
+- [ ] Estruturar a viabilidade da implementação de multithreading
