@@ -52,7 +52,7 @@ Continue pelo guia [Primeiros passos](docs/pt-BR/primeiros-passos.md) para ver u
 
 ## Demonstração
 
-O repositório inclui uma demonstração interativa de gerenciamento de tarefas em [`Main.java`](aktissa/src/test/java/io/github/aktissa/demo/Main.java). Abra a classe em uma IDE e execute seu método `main`.
+O repositório inclui uma demonstração interativa de gerenciamento de tarefas em [`TaskManagerDemo.java`](aktissa/src/test/java/io/github/aktissa/demo/TaskManagerDemo.java). Abra a classe em uma IDE e execute seu método `main`.
 
 <p align="center">
     <img width="849" height="528" alt="Demonstração de gerenciamento de tarefas da Aktissa" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />

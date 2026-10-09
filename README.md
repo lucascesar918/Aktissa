@@ -52,7 +52,7 @@ Continue with the [Getting Started guide](docs/en/getting-started.md) for a smal
 
 ## Demo
 
-The repository includes an interactive task-management demo in [`Main.java`](aktissa/src/test/java/io/github/aktissa/demo/Main.java). Open the class in an IDE and run its `main` method.
+The repository includes an interactive task-management demo in [`TaskManagerDemo.java`](aktissa/src/test/java/io/github/aktissa/demo/TaskManagerDemo.java). Open the class in an IDE and run its `main` method.
 
 <p align="center">
     <img width="849" height="528" alt="Aktissa task management demo" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />

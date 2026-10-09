@@ -14,7 +14,7 @@ import io.github.aktissa.builders.TextFieldBuilder;
 import io.github.aktissa.builders.WindowBuilder;
 import io.github.aktissa.core.UI;
 
-public class Main {
+public class TaskManagerDemo {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             WindowBuilder mainWindow = UI.window("Task Manager Demo");

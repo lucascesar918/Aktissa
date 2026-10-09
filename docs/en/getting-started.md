@@ -92,7 +92,7 @@ The outer panel uses Swing's `BorderLayout`; the inner panels use Aktissa's titl
 
 ## Run the Repository Demo
 
-The interactive task-management demo is in `aktissa/src/test/java/io/github/aktissa/demo/Main.java`. Open that class in an IDE and run its `main` method. Running `mvn test` from `aktissa/` compiles the module and its test sources, but does not launch the Swing window.
+The interactive task-management demo is in `aktissa/src/test/java/io/github/aktissa/demo/TaskManagerDemo.java`. Open that class in an IDE and run its `main` method. Running `mvn test` from `aktissa/` compiles the module and its test sources, but does not launch the Swing window.
 
 ## Theme Behavior
 

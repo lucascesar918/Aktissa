@@ -92,7 +92,7 @@ O painel externo usa o `BorderLayout` do Swing; os painéis internos usam bordas
 
 ## Executar a demonstração do repositório
 
-A demonstração interativa de gerenciamento de tarefas está em `aktissa/src/test/java/io/github/aktissa/demo/Main.java`. Abra essa classe em uma IDE e execute seu método `main`. Executar `mvn test` dentro de `aktissa/` compila o módulo e os fontes de teste, mas não abre a janela Swing.
+A demonstração interativa de gerenciamento de tarefas está em `aktissa/src/test/java/io/github/aktissa/demo/TaskManagerDemo.java`. Abra essa classe em uma IDE e execute seu método `main`. Executar `mvn test` dentro de `aktissa/` compila o módulo e os fontes de teste, mas não abre a janela Swing.
 
 ## Comportamento dos temas
 
