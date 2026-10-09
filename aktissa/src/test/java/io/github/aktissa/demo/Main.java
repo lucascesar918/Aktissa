@@ -31,7 +31,7 @@ public class Main {
                     .onChange(effortValue -> effortLabel.text("Estimated effort: " + effortValue + " hours").getRawLabel().repaint());
 
             // Build the interface.
-            mainWindow.content(
+            mainWindow.size(850, 550).content(
                     UI.panel().border()
                             .add(UI.panel().title("New Task").vertical()
                                             .add(taskNameField)
