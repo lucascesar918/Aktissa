@@ -13,45 +13,41 @@ import io.github.aktissa.builders.TableBuilder;
 import io.github.aktissa.builders.TextFieldBuilder;
 import io.github.aktissa.builders.WindowBuilder;
 import io.github.aktissa.core.UI;
-import io.github.aktissa.theme.DarkTheme;
-import io.github.aktissa.theme.ThemeManager;
 
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            ThemeManager.set(new DarkTheme());
-
-            WindowBuilder mainWindow = UI.window("Demo - Gestão de Tarefas");
+            WindowBuilder mainWindow = UI.window("Task Manager Demo");
 
             // Keep references to components whose state is needed elsewhere in the screen.
-            TableBuilder taskTable = UI.table().columns("Tarefa", "Categoria", "Prioridade", "Esforço");
+            TableBuilder taskTable = UI.table().columns("Task", "Category", "Priority", "Effort");
             RadioGroupBuilder priorityGroup = UI.radioGroup();
-            TextFieldBuilder taskNameField = UI.textField("Descrição da Tarefa", 20);
-            ComboBoxBuilder categoryComboBox = UI.comboBox("Categoria", "Desenvolvimento", "Infraestrutura", "Design");
-            ProgressBarBuilder progressBar = UI.progressBar(0, 10).value(0);
+            TextFieldBuilder taskNameField = UI.textField("Task description", 20);
+            ComboBoxBuilder categoryComboBox = UI.comboBox("Category", "Development", "Infrastructure", "Design");
+            ProgressBarBuilder progressBar = UI.progressBar(0, 10);
             
-            LabelBuilder effortLabel = UI.label("Tempo estimado: 5 horas").secondary();
+            LabelBuilder effortLabel = UI.label("Estimated effort: 5 hours").secondary();
             SliderBuilder effortSlider = UI.slider(1, 40, 5)
-                    .onChange(effortValue -> effortLabel.text("Tempo estimado: " + effortValue + " horas").getRawLabel().repaint());
+                    .onChange(effortValue -> effortLabel.text("Estimated effort: " + effortValue + " hours").getRawLabel().repaint());
 
             // Build the interface.
-            mainWindow.size(850, 550).content(
+            mainWindow.content(
                     UI.panel().border()
-                            .add(UI.panel().title("Nova Demanda").vertical()
+                            .add(UI.panel().title("New Task").vertical()
                                             .add(taskNameField)
                                             .add(categoryComboBox)
                                             .add(UI.panel().flowLeft()
-                                                    .add(UI.label("Prioridade:").secondary())
-                                                    .add(priorityGroup.add("Baixa"))
-                                                    .add(priorityGroup.add("Média (Padrão)").accentText())
-                                                    .add(priorityGroup.add("Alta"))
+                                                    .add(UI.label("Priority:").secondary())
+                                                    .add(priorityGroup.add("Low"))
+                                                    .add(priorityGroup.add("Medium (Default)").accentText())
+                                                    .add(priorityGroup.add("High"))
                                             )
                                             .add(UI.panel().vertical()
                                                     .add(effortLabel)
                                                     .add(effortSlider)
                                             )
                                             .add(UI.panel().flowRight()
-                                                    .add(UI.button("Registrar Tarefa")
+                                                    .add(UI.button("Add Task")
                                                             .onClick(() -> registerTask(
                                                                     mainWindow, taskNameField, categoryComboBox,
                                                                     priorityGroup, effortSlider, taskTable, progressBar
@@ -59,23 +55,23 @@ public class Main {
                                             )
                             , BorderLayout.WEST)
 
-                            .add(UI.panel().title("Visão Geral do Sprint").vertical()
+                            .add(UI.panel().title("Sprint Overview").vertical()
                                             .add(UI.scroll(taskTable).withBorder())
                                             .add(UI.panel().flowLeft()
-                                                    .add(UI.checkBox("Sincronizar na nuvem").checked(true))
-                                                    .add(UI.checkBox("Gerar log"))
+                                                    .add(UI.checkBox("Sync to cloud").checked(true))
+                                                    .add(UI.checkBox("Generate log"))
                                             )
-                                            .add(UI.panel().title("Capacidade da Equipe").vertical()
+                                            .add(UI.panel().title("Team Capacity").vertical()
                                                     .add(progressBar)
                                                     .add(UI.panel().flowRight()
-                                                            .add(UI.button("Deletar Tarefas").onClick(() -> {
-                                                                UI.confirm(mainWindow, "Atenção", 
-                                                                        "Isso apagará todas as tarefas da memória. Continuar?",
+                                                                                                                        .add(UI.button("Delete Tasks").onClick(() -> {
+                                                                                                                                UI.confirm(mainWindow, "Warning",
+                                                                                                                                                "This will delete all tasks from memory. Continue?",
                                                                         () -> {
                                                                             taskTable.clear();
                                                                             progressBar.value(0);
                                                                         },
-                                                                        "Cancelar", "Sim, Deletar"
+                                                                        "Cancel", "Delete"
                                                                 );
                                                             }))
                                                     )
@@ -89,12 +85,11 @@ public class Main {
                                                                          ComboBoxBuilder categoryComboBox, RadioGroupBuilder priorityGroup,
                                                                          SliderBuilder effortSlider, TableBuilder taskTable,
                                                                          ProgressBarBuilder progressBar) {
-        
                 String taskName = taskNameField.getRawField().getText().trim();
                 String selectedPriority = priorityGroup.getSelectedValue();
 
                 if (taskName.isEmpty() || selectedPriority == null) {
-                        UI.alert(window, "Falha de Validação", "Preencha o nome da tarefa e selecione a prioridade.");
+                        UI.alert(window, "Validation Error", "Enter a task description and select a priority.");
             return;
         }
 
