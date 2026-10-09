@@ -22,11 +22,11 @@ A demonstração interativa do repositório combina formulário, botões de opç
 
 ## Sessão de foco
 
-Execute `io.github.aktissa.demo.FocusSession` em `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java`. Capture a janela antes de concluir a sessão, com o slider, o progresso parcial e o botão de conclusão visíveis. Salve o PNG como `docs/assets/screenshots/focus-session.png`.
+O exemplo independente `io.github.aktissa.demo.FocusSession` mostra uma tela interativa compacta com slider, barra de progresso e ação de conclusão.
 
-> Captura ainda não adicionada.
-
-> Captura ainda não adicionada.
+<p align="center">
+    <img width="709" alt="Demonstração da sessão de foco no tema escuro padrão" src="../assets/screenshots/focus-session.png" />
+</p>
 
 ## Componentes e layouts
 
@@ -34,12 +34,12 @@ A captura do gerenciador de tarefas acima também serve como exemplo de componen
 
 ## Temas prontos
 
-Capture uma mesma tela em vários temas incluídos, ou uma única visualização que demonstre claramente a paleta. Salve como `docs/assets/screenshots/theme-presets.png`.
+Estas capturas mostram a mesma tela de sessão de foco em três temas incluídos:
 
-> Captura ainda não adicionada.
-
-Quando a captura estiver pronta, substitua o texto provisório por um link de imagem, por exemplo:
-
-```md
-![Demonstração da sessão de foco](../assets/screenshots/focus-session.png)
-```
+<table>
+    <tr>
+        <td align="center"><img width="220" alt="Sessão de foco no tema escuro" src="../assets/screenshots/dark-theme-demo.png" /><br /><strong>Escuro</strong></td>
+        <td align="center"><img width="220" alt="Sessão de foco no tema claro" src="../assets/screenshots/light-theme-demo.png" /><br /><strong>Claro</strong></td>
+        <td align="center"><img width="220" alt="Sessão de foco no tema voltado a daltonismo" src="../assets/screenshots/colorblind-theme-demo.png" /><br /><strong>Daltonismo</strong></td>
+    </tr>
+</table>

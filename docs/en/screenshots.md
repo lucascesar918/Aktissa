@@ -22,11 +22,11 @@ The repository's interactive demo combines forms, radio buttons, a table, progre
 
 ## Focus Session
 
-Run `io.github.aktissa.demo.FocusSession` from `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java`. Capture the window before completing the session, while the slider, partial progress, and completion button are visible. Save the PNG as `docs/assets/screenshots/focus-session.png`.
+The standalone `io.github.aktissa.demo.FocusSession` example shows a compact interactive screen with a slider, progress bar, and completion action.
 
-> Screenshot not added yet.
-
-> Screenshot not added yet.
+<p align="center">
+    <img width="709" alt="Focus Session demo using the default dark theme" src="../assets/screenshots/focus-session.png" />
+</p>
 
 ## Components and Layouts
 
@@ -34,12 +34,12 @@ The Task Manager screenshot above also serves as the components-and-layouts exam
 
 ## Theme Presets
 
-Capture one screen in multiple included themes, or a single view that clearly shows the palette. Save it as `docs/assets/screenshots/theme-presets.png`.
+These screenshots show the same Focus Session screen in three included themes:
 
-> Screenshot not added yet.
-
-When a capture is ready, replace its placeholder with an image link, for example:
-
-```md
-![Focus session demo](../assets/screenshots/focus-session.png)
-```
+<table>
+    <tr>
+        <td align="center"><img width="220" alt="Focus Session in the dark theme" src="../assets/screenshots/dark-theme-demo.png" /><br /><strong>Dark</strong></td>
+        <td align="center"><img width="220" alt="Focus Session in the light theme" src="../assets/screenshots/light-theme-demo.png" /><br /><strong>Light</strong></td>
+        <td align="center"><img width="220" alt="Focus Session in the colorblind-oriented theme" src="../assets/screenshots/colorblind-theme-demo.png" /><br /><strong>Colorblind-oriented</strong></td>
+    </tr>
+</table>
