@@ -93,3 +93,4 @@ As mudanças de tema não são propagadas aos componentes que já foram constru�
 ## Próximos guias
 
 - [Componentes e layouts](componentes-e-layouts.md)
+- [Temas](temas.md)

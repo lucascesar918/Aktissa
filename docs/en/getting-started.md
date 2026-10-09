@@ -93,3 +93,4 @@ Theme changes are not propagated to components that have already been constructe
 ## Next Guides
 
 - [Components and Layouts](components-and-layouts.md)
+- [Themes](themes.md)
