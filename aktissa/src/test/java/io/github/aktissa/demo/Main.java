@@ -23,57 +23,57 @@ public class Main {
 
             WindowBuilder mainWindow = UI.window("Demo - Gestão de Tarefas");
 
-            // Declaração dos componentes que precisam reter estado para interagir entre si
-            TableBuilder tabelaTarefas = UI.table().columns("Tarefa", "Categoria", "Prioridade", "Esforço");
-            RadioGroupBuilder grupoPrioridade = UI.radioGroup();
-            TextFieldBuilder campoNome = UI.textField("Descrição da Tarefa", 20);
-            ComboBoxBuilder comboCategoria = UI.comboBox("Categoria", "Desenvolvimento", "Infraestrutura", "Design");
-            ProgressBarBuilder barraProgresso = UI.progressBar(0, 10).value(0);
+            // Keep references to components whose state is needed elsewhere in the screen.
+            TableBuilder taskTable = UI.table().columns("Tarefa", "Categoria", "Prioridade", "Esforço");
+            RadioGroupBuilder priorityGroup = UI.radioGroup();
+            TextFieldBuilder taskNameField = UI.textField("Descrição da Tarefa", 20);
+            ComboBoxBuilder categoryComboBox = UI.comboBox("Categoria", "Desenvolvimento", "Infraestrutura", "Design");
+            ProgressBarBuilder progressBar = UI.progressBar(0, 10).value(0);
             
-            LabelBuilder rotuloEsforço = UI.label("Tempo estimado: 5 horas").secondary();
-            SliderBuilder sliderEsforço = UI.slider(1, 40, 5)
-                    .onChange(valor -> rotuloEsforço.text("Tempo estimado: " + valor + " horas").getRawLabel().repaint());
+            LabelBuilder effortLabel = UI.label("Tempo estimado: 5 horas").secondary();
+            SliderBuilder effortSlider = UI.slider(1, 40, 5)
+                    .onChange(effortValue -> effortLabel.text("Tempo estimado: " + effortValue + " horas").getRawLabel().repaint());
 
-            // Montagem da interface
+            // Build the interface.
             mainWindow.size(850, 550).content(
                     UI.panel().border()
                             .add(UI.panel().title("Nova Demanda").vertical()
-                                            .add(campoNome)
-                                            .add(comboCategoria)
+                                            .add(taskNameField)
+                                            .add(categoryComboBox)
                                             .add(UI.panel().flowLeft()
                                                     .add(UI.label("Prioridade:").secondary())
-                                                    .add(grupoPrioridade.add("Baixa"))
-                                                    .add(grupoPrioridade.add("Média (Padrão)").accentText())
-                                                    .add(grupoPrioridade.add("Alta"))
+                                                    .add(priorityGroup.add("Baixa"))
+                                                    .add(priorityGroup.add("Média (Padrão)").accentText())
+                                                    .add(priorityGroup.add("Alta"))
                                             )
                                             .add(UI.panel().vertical()
-                                                    .add(rotuloEsforço)
-                                                    .add(sliderEsforço)
+                                                    .add(effortLabel)
+                                                    .add(effortSlider)
                                             )
                                             .add(UI.panel().flowRight()
                                                     .add(UI.button("Registrar Tarefa")
-                                                            .onClick(() -> registrarDemanda(
-                                                                    mainWindow, campoNome, comboCategoria, 
-                                                                    grupoPrioridade, sliderEsforço, tabelaTarefas, barraProgresso
+                                                            .onClick(() -> registerTask(
+                                                                    mainWindow, taskNameField, categoryComboBox,
+                                                                    priorityGroup, effortSlider, taskTable, progressBar
                                                             )))
                                             )
                             , BorderLayout.WEST)
 
                             .add(UI.panel().title("Visão Geral do Sprint").vertical()
-                                            .add(UI.scroll(tabelaTarefas).withBorder())
+                                            .add(UI.scroll(taskTable).withBorder())
                                             .add(UI.panel().flowLeft()
                                                     .add(UI.checkBox("Sincronizar na nuvem").checked(true))
                                                     .add(UI.checkBox("Gerar log"))
                                             )
                                             .add(UI.panel().title("Capacidade da Equipe").vertical()
-                                                    .add(barraProgresso)
+                                                    .add(progressBar)
                                                     .add(UI.panel().flowRight()
                                                             .add(UI.button("Deletar Tarefas").onClick(() -> {
                                                                 UI.confirm(mainWindow, "Atenção", 
                                                                         "Isso apagará todas as tarefas da memória. Continuar?",
                                                                         () -> {
-                                                                            tabelaTarefas.clear();
-                                                                            barraProgresso.value(0);
+                                                                            taskTable.clear();
+                                                                            progressBar.value(0);
                                                                         },
                                                                         "Cancelar", "Sim, Deletar"
                                                                 );
@@ -85,27 +85,28 @@ public class Main {
         });
     }
 
-    private static void registrarDemanda(WindowBuilder janela, TextFieldBuilder nome, ComboBoxBuilder categoria, 
-                                         RadioGroupBuilder prioridade, SliderBuilder esforço, 
-                                         TableBuilder tabela, ProgressBarBuilder progresso) {
+        private static void registerTask(WindowBuilder window, TextFieldBuilder taskNameField,
+                                                                         ComboBoxBuilder categoryComboBox, RadioGroupBuilder priorityGroup,
+                                                                         SliderBuilder effortSlider, TableBuilder taskTable,
+                                                                         ProgressBarBuilder progressBar) {
         
-        String textoNome = nome.getRawField().getText().trim();
-        String textoPrioridade = prioridade.getSelectedValue();
+                String taskName = taskNameField.getRawField().getText().trim();
+                String selectedPriority = priorityGroup.getSelectedValue();
 
-        if (textoNome.isEmpty() || textoPrioridade == null) {
-            UI.alert(janela, "Falha de Validação", "Preencha o nome da tarefa e selecione a prioridade.");
+                if (taskName.isEmpty() || selectedPriority == null) {
+                        UI.alert(window, "Falha de Validação", "Preencha o nome da tarefa e selecione a prioridade.");
             return;
         }
 
-        String textoCategoria = (String) categoria.getRawComboBox().getSelectedItem();
-        String valorEsforco = esforço.getRawSlider().getValue() + "h";
+                String selectedCategory = (String) categoryComboBox.getRawComboBox().getSelectedItem();
+                String effortValue = effortSlider.getRawSlider().getValue() + "h";
 
-        tabela.row(textoNome, textoCategoria, textoPrioridade, valorEsforco);
-        nome.text(""); 
+                taskTable.row(taskName, selectedCategory, selectedPriority, effortValue);
+                taskNameField.text("");
 
-        int progressoAtual = progresso.getRawBar().getValue();
-        if (progressoAtual < progresso.getRawBar().getMaximum()) {
-            progresso.value(progressoAtual + 1);
+                int currentProgress = progressBar.getRawBar().getValue();
+                if (currentProgress < progressBar.getRawBar().getMaximum()) {
+                        progressBar.value(currentProgress + 1);
         }
     }
 }
