@@ -22,15 +22,15 @@ The repository's interactive demo combines forms, radio buttons, a table, progre
 
 ## Focus Session
 
-Capture the compact screen from the [Getting Started guide](getting-started.md) and save it as `docs/assets/screenshots/focus-session.png`.
+Run `io.github.aktissa.demo.FocusSession` from `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java`. Capture the window before completing the session, while the slider, partial progress, and completion button are visible. Save the PNG as `docs/assets/screenshots/focus-session.png`.
+
+> Screenshot not added yet.
 
 > Screenshot not added yet.
 
 ## Components and Layouts
 
-Capture a representative screen showing a few Aktissa components composed with its layout builders. Save it as `docs/assets/screenshots/components-and-layouts.png`.
-
-> Screenshot not added yet.
+The Task Manager screenshot above also serves as the components-and-layouts example; it shows the input controls, grouped options, titled panels, table, and actions working together. No separate screenshot is needed for this slot.
 
 ## Theme Presets
 

@@ -44,6 +44,8 @@ Adicione esta dependência ao `pom.xml` da aplicação que usará Aktissa:
 
 Esta tela de sessão de foco usa uma janela, painéis com título, um slider, uma barra de progresso e um botão. O slider atualiza o rótulo ao lado, e o botão completa o progresso e abre um diálogo.
 
+A mesma tela está disponível como classe executável em `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java` para experimentar ou tirar uma captura.
+
 ```java
 import java.awt.BorderLayout;
 

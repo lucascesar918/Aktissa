@@ -44,6 +44,8 @@ Add this dependency to the `pom.xml` of the application that will use Aktissa:
 
 This focus-session screen uses a window, titled panels, a slider, a progress bar, and a button. The slider updates its neighboring label, and the button completes the progress and opens a dialog.
 
+The same screen is available as a runnable class at `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java` for trying it or capturing a screenshot.
+
 ```java
 import java.awt.BorderLayout;
 

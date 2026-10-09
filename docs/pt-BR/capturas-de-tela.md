@@ -22,15 +22,15 @@ A demonstração interativa do repositório combina formulário, botões de opç
 
 ## Sessão de foco
 
-Capture a tela compacta do guia [Primeiros passos](primeiros-passos.md) e salve como `docs/assets/screenshots/focus-session.png`.
+Execute `io.github.aktissa.demo.FocusSession` em `aktissa/src/test/java/io/github/aktissa/demo/FocusSession.java`. Capture a janela antes de concluir a sessão, com o slider, o progresso parcial e o botão de conclusão visíveis. Salve o PNG como `docs/assets/screenshots/focus-session.png`.
+
+> Captura ainda não adicionada.
 
 > Captura ainda não adicionada.
 
 ## Componentes e layouts
 
-Capture uma tela representativa com alguns componentes Aktissa compostos usando seus builders de layout. Salve como `docs/assets/screenshots/components-and-layouts.png`.
-
-> Captura ainda não adicionada.
+A captura do gerenciador de tarefas acima também serve como exemplo de componentes e layouts: ela mostra controles de entrada, opções agrupadas, painéis com título, tabela e ações funcionando em conjunto. Não é necessário um print separado para este espaço.
 
 ## Temas prontos
 
