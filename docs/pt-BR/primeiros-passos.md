@@ -16,15 +16,19 @@ Este guia é para pessoas desenvolvedoras Java que já conhecem Swing e querem m
 
 - Java 17 ou superior
 - Maven
+- Git
 
 ## Instalar Aktissa localmente
 
-> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. A partir da raiz do repositório, instale a biblioteca no repositório Maven local:
+> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. Clone o repositório no GitHub e instale o módulo Maven no repositório local:
 
 ```sh
-cd aktissa
+git clone https://github.com/lucascesar918/aktissa.git
+cd aktissa/aktissa
 mvn install
 ```
+
+O primeiro diretório `aktissa` é o repositório clonado; o segundo é o módulo Maven que contém o `pom.xml`.
 
 Adicione esta dependência ao `pom.xml` da aplicação que usará Aktissa:
 

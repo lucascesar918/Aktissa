@@ -24,15 +24,19 @@ Aktissa is intended for Java developers who already know Swing and want to build
 
 - Java 17 or later
 - Maven
+- Git
 
 ## Get Started
 
-> **Not published yet:** Aktissa is not available from a remote Maven repository. Install it into your local Maven repository from a clone:
+> **Not published yet:** Aktissa is not available from a remote Maven repository. Clone the GitHub repository and install the Maven module into your local repository:
 
 ```sh
-cd aktissa
+git clone https://github.com/lucascesar918/aktissa.git
+cd aktissa/aktissa
 mvn install
 ```
+
+The first `aktissa` directory is the cloned repository; the second is the Maven module containing `pom.xml`.
 
 Then add it to another Maven project's `pom.xml`:
 

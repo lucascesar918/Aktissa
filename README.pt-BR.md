@@ -24,15 +24,19 @@ Aktissa é voltada a pessoas desenvolvedoras Java que já conhecem Swing e quere
 
 - Java 17 ou superior
 - Maven
+- Git
 
 ## Primeiros passos
 
-> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. Instale-a no repositório Maven local a partir de um clone:
+> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. Clone o repositório no GitHub e instale o módulo Maven no repositório local:
 
 ```sh
-cd aktissa
+git clone https://github.com/lucascesar918/aktissa.git
+cd aktissa/aktissa
 mvn install
 ```
+
+O primeiro diretório `aktissa` é o repositório clonado; o segundo é o módulo Maven que contém o `pom.xml`.
 
 Depois, adicione a dependência ao `pom.xml` de outro projeto Maven:
 

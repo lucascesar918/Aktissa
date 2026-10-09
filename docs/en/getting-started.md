@@ -16,15 +16,19 @@ This guide is for Java developers who already know Swing and want to build a sma
 
 - Java 17 or later
 - Maven
+- Git
 
 ## Install Aktissa Locally
 
-> **Not published yet:** Aktissa is not available from a remote Maven repository. From the repository root, install the library into your local Maven repository:
+> **Not published yet:** Aktissa is not available from a remote Maven repository. Clone the GitHub repository, then install its Maven module into your local repository:
 
 ```sh
-cd aktissa
+git clone https://github.com/lucascesar918/aktissa.git
+cd aktissa/aktissa
 mvn install
 ```
+
+The first `aktissa` directory is the cloned repository; the second is the Maven module containing `pom.xml`.
 
 Add this dependency to the `pom.xml` of the application that will use Aktissa:
 
