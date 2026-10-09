@@ -51,5 +51,7 @@ The default theme is dark. Choose a different theme before constructing the inte
 ## Documentation
 
 - [Getting Started (English)](docs/en/getting-started.md)
+- [Components and Layouts (English)](docs/en/components-and-layouts.md)
 - [Primeiros passos (Português)](docs/pt-BR/primeiros-passos.md)
+- [Componentes e layouts (Português)](docs/pt-BR/componentes-e-layouts.md)
 - [README em português](README.pt-BR.md)

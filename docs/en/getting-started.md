@@ -89,3 +89,7 @@ ThemeManager.set(new LightTheme());
 ```
 
 Theme changes are not propagated to components that have already been constructed. Set the theme once, before building the window.
+
+## Next Guides
+
+- [Components and Layouts](components-and-layouts.md)

@@ -89,3 +89,7 @@ ThemeManager.set(new LightTheme());
 ```
 
 As mudanças de tema não são propagadas aos componentes que já foram construídos. Defina o tema uma vez, antes de montar a janela.
+
+## Próximos guias
+
+- [Componentes e layouts](componentes-e-layouts.md)
