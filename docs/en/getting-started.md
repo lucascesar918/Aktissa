@@ -1,6 +1,14 @@
 # Getting Started
 
-[English](getting-started.md) | [Português](../pt-BR/primeiros-passos.md) | [Project README](../../README.md)
+<p align="center">
+    <a href="getting-started.md"><strong>🇬🇧 English</strong></a>
+    &nbsp;·&nbsp;
+    <a href="../pt-BR/primeiros-passos.md">🇧🇷 Português</a>
+</p>
+
+<p align="center"><a href="../../README.md">Project README</a></p>
+
+<hr>
 
 This guide is for Java developers who already know Swing and want to build a small screen with Aktissa. The example uses the library's default component styling and panel spacing; it only configures the behavior specific to this screen.
 
@@ -11,7 +19,7 @@ This guide is for Java developers who already know Swing and want to build a sma
 
 ## Install Aktissa Locally
 
-Aktissa is not published to a remote Maven repository yet. From the repository root, install the library into your local Maven repository:
+> **Not published yet:** Aktissa is not available from a remote Maven repository. From the repository root, install the library into your local Maven repository:
 
 ```sh
 cd aktissa
@@ -88,7 +96,7 @@ Aktissa starts with `DarkTheme`. To select a preset, call `ThemeManager.set(...)
 ThemeManager.set(new LightTheme());
 ```
 
-Theme changes are not propagated to components that have already been constructed. Set the theme once, before building the window.
+> **Current limitation:** Theme changes are not propagated to components that have already been constructed. Set the theme once, before building the window.
 
 ## Next Guides
 

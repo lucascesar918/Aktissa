@@ -1,8 +1,18 @@
 # Components and Layouts
 
-[English](components-and-layouts.md) | [Português](../pt-BR/componentes-e-layouts.md) | [Getting Started](getting-started.md)
+<p align="center">
+        <a href="components-and-layouts.md"><strong>🇬🇧 English</strong></a>
+        &nbsp;·&nbsp;
+        <a href="../pt-BR/componentes-e-layouts.md">🇧🇷 Português</a>
+</p>
+
+<p align="center"><a href="getting-started.md">Getting Started</a></p>
+
+<hr>
 
 Aktissa builders compose Swing components and provide common styling and event setup. Use a builder for the concise API, and use its `getRaw...()` method when you need a Swing operation that Aktissa does not wrap.
+
+> **Design principle:** Aktissa removes repetitive Swing setup while leaving Swing components accessible.
 
 ## Windows and Panels
 

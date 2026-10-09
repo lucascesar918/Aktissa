@@ -1,6 +1,14 @@
 # Aktissa
 
-[English](README.md) | [Português](README.pt-BR.md)
+<p align="center">
+    <a href="README.md">🇬🇧 English</a>
+    &nbsp;·&nbsp;
+    <a href="README.pt-BR.md"><strong>🇧🇷 Português</strong></a>
+</p>
+
+<p align="center">Builders fluentes para criar interfaces Swing com mais agilidade</p>
+
+<hr>
 
 Aktissa é uma biblioteca Java leve para construir interfaces Swing com uma API fluente baseada em builders. Ela reduz a configuração repetitiva de componentes e layouts sem impedir o acesso aos componentes Swing subjacentes.
 
@@ -19,7 +27,7 @@ Aktissa é voltada a pessoas desenvolvedoras Java que já conhecem Swing e quere
 
 ## Primeiros passos
 
-Aktissa ainda não está publicada em um repositório Maven remoto. Instale-a no repositório Maven local a partir de um clone:
+> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. Instale-a no repositório Maven local a partir de um clone:
 
 ```sh
 cd aktissa
@@ -42,7 +50,9 @@ Continue pelo guia [Primeiros passos](docs/pt-BR/primeiros-passos.md) para ver u
 
 O repositório inclui uma demonstração interativa de gerenciamento de tarefas em [`Main.java`](aktissa/src/test/java/io/github/aktissa/demo/Main.java). Abra a classe em uma IDE e execute seu método `main`.
 
-<img width="849" height="528" alt="Demonstração de gerenciamento de tarefas da Aktissa" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />
+<p align="center">
+    <img width="849" height="528" alt="Demonstração de gerenciamento de tarefas da Aktissa" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />
+</p>
 
 ## Observação sobre temas
 

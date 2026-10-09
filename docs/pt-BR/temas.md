@@ -1,6 +1,14 @@
 # Temas
 
-[English](../en/themes.md) | [Português](temas.md) | [Componentes e layouts](componentes-e-layouts.md)
+<p align="center">
+    <a href="../en/themes.md">🇬🇧 English</a>
+    &nbsp;·&nbsp;
+    <a href="temas.md"><strong>🇧🇷 Português</strong></a>
+</p>
+
+<p align="center"><a href="componentes-e-layouts.md">Componentes e layouts</a></p>
+
+<hr>
 
 A Aktissa aplica as cores do tema enquanto constrói seus componentes. O tema padrão é `DarkTheme`; selecione outro tema antes de criar a interface.
 
@@ -62,4 +70,4 @@ Selecione-o com `ThemeManager.set(new ForestTheme())` antes de construir a inter
 
 ## Troca de tema durante a execução
 
-Chamar `ThemeManager.set(...)` altera o tema retornado por `ThemeManager.current()`, mas não percorre nem atualiza os estilos de componentes já existentes. Por enquanto, selecione o tema antes de montar a janela. A troca de tema em tempo de execução ainda não é oferecida.
+> **Limitação atual:** chamar `ThemeManager.set(...)` altera o tema retornado por `ThemeManager.current()`, mas não percorre nem atualiza os estilos de componentes já existentes. Por enquanto, selecione o tema antes de montar a janela. A troca de tema em tempo de execução ainda não é oferecida.

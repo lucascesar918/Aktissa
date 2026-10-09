@@ -1,6 +1,14 @@
 # Themes
 
-[English](themes.md) | [Português](../pt-BR/temas.md) | [Components and Layouts](components-and-layouts.md)
+<p align="center">
+    <a href="themes.md"><strong>🇬🇧 English</strong></a>
+    &nbsp;·&nbsp;
+    <a href="../pt-BR/temas.md">🇧🇷 Português</a>
+</p>
+
+<p align="center"><a href="components-and-layouts.md">Components and Layouts</a></p>
+
+<hr>
 
 Aktissa applies theme colors while its components are constructed. The default theme is `DarkTheme`; choose another theme before creating the interface.
 
@@ -62,4 +70,4 @@ Select it with `ThemeManager.set(new ForestTheme())` before constructing the UI.
 
 ## Runtime Theme Changes
 
-Calling `ThemeManager.set(...)` changes the theme returned by `ThemeManager.current()`, but it does not traverse or restyle components that already exist. For now, select the theme before building the window. Live theme switching is not currently provided.
+> **Current limitation:** Calling `ThemeManager.set(...)` changes the theme returned by `ThemeManager.current()`, but it does not traverse or restyle components that already exist. For now, select the theme before building the window. Live theme switching is not currently provided.

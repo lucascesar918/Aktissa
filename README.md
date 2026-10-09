@@ -1,6 +1,14 @@
 # Aktissa
 
-[English](README.md) | [Português](README.pt-BR.md)
+<p align="center">
+    <a href="README.md"><strong>🇬🇧 English</strong></a>
+    &nbsp;·&nbsp;
+    <a href="README.pt-BR.md">🇧🇷 Português</a>
+</p>
+
+<p align="center">Fluent builders for faster Java Swing interfaces</p>
+
+<hr>
 
 Aktissa is a lightweight Java library for building Swing interfaces with a fluent builder API. It reduces repetitive component and layout setup while keeping the underlying Swing components accessible.
 
@@ -19,7 +27,7 @@ Aktissa is intended for Java developers who already know Swing and want to build
 
 ## Get Started
 
-Aktissa is not published to a remote Maven repository yet. Install it into your local Maven repository from a clone:
+> **Not published yet:** Aktissa is not available from a remote Maven repository. Install it into your local Maven repository from a clone:
 
 ```sh
 cd aktissa
@@ -42,7 +50,9 @@ Continue with the [Getting Started guide](docs/en/getting-started.md) for a smal
 
 The repository includes an interactive task-management demo in [`Main.java`](aktissa/src/test/java/io/github/aktissa/demo/Main.java). Open the class in an IDE and run its `main` method.
 
-<img width="849" height="528" alt="Aktissa task management demo" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />
+<p align="center">
+    <img width="849" height="528" alt="Aktissa task management demo" src="https://github.com/user-attachments/assets/b04436d4-2f07-456b-ba22-7333fcd7b631" />
+</p>
 
 ## Theme Note
 

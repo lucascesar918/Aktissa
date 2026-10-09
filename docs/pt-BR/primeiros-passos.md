@@ -1,6 +1,14 @@
 # Primeiros passos
 
-[English](../en/getting-started.md) | [Português](primeiros-passos.md) | [README do projeto](../../README.pt-BR.md)
+<p align="center">
+    <a href="../en/getting-started.md">🇬🇧 English</a>
+    &nbsp;·&nbsp;
+    <a href="primeiros-passos.md"><strong>🇧🇷 Português</strong></a>
+</p>
+
+<p align="center"><a href="../../README.pt-BR.md">README do projeto</a></p>
+
+<hr>
 
 Este guia é para pessoas desenvolvedoras Java que já conhecem Swing e querem montar uma tela pequena com Aktissa. O exemplo aproveita o estilo padrão dos componentes e o espaçamento automático dos painéis; só configura o comportamento específico desta tela.
 
@@ -11,7 +19,7 @@ Este guia é para pessoas desenvolvedoras Java que já conhecem Swing e querem m
 
 ## Instalar Aktissa localmente
 
-Aktissa ainda não está publicada em um repositório Maven remoto. A partir da raiz do repositório, instale a biblioteca no repositório Maven local:
+> **Ainda não publicada:** Aktissa não está disponível em um repositório Maven remoto. A partir da raiz do repositório, instale a biblioteca no repositório Maven local:
 
 ```sh
 cd aktissa
@@ -88,7 +96,7 @@ Aktissa inicia com `DarkTheme`. Para selecionar um tema pronto, chame `ThemeMana
 ThemeManager.set(new LightTheme());
 ```
 
-As mudanças de tema não são propagadas aos componentes que já foram construídos. Defina o tema uma vez, antes de montar a janela.
+> **Limitação atual:** mudanças de tema não são propagadas aos componentes que já foram construídos. Defina o tema uma vez, antes de montar a janela.
 
 ## Próximos guias
 
