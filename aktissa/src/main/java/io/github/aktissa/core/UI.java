@@ -6,6 +6,7 @@ import io.github.aktissa.builders.ComboBoxBuilder;
 import io.github.aktissa.builders.DialogBuilder;
 import io.github.aktissa.builders.LabelBuilder;
 import io.github.aktissa.builders.PanelBuilder;
+import io.github.aktissa.builders.PasswordFieldBuilder;
 import io.github.aktissa.builders.ProgressBarBuilder;
 import io.github.aktissa.builders.RadioButtonBuilder;
 import io.github.aktissa.builders.RadioGroupBuilder;
@@ -33,6 +34,10 @@ public class UI {
 
     public static TextFieldBuilder textField(String label, int cols) {
         return new TextFieldBuilder(label, cols);
+    }
+
+    public static PasswordFieldBuilder passwordField(String label, int cols) {
+        return new PasswordFieldBuilder(label, cols);
     }
 
     public static TextFieldBuilder textFieldReadOnly(String label, int cols) {
